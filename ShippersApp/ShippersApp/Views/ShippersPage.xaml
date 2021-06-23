@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippersApp.Views.ShippersPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Transportistas"
+                   HorizontalTextAlignment="Center"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Margin="0,30,0,0"/>
+            <Button Text="Agregar transportista"
+                    x:Name="btnAddShipperPage"
+                    Clicked="btnAddShipperPage_Clicked"
+                    BackgroundColor="LightSkyBlue"
+                    HorizontalOptions="Center"
+                    CornerRadius="10"/>
+            <ListView x:Name="ShippersList"
+                    SeparatorColor="DarkBlue"
+                    RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,10,0,20">
+                                <Label Text="{Binding ShipperID, StringFormat='Código: {0}'}"/>
+                                <Label Text="{Binding CompanyName, StringFormat='Nombre: {0}'}"/>
+                                <Label Text="{Binding Phone, StringFormat='Teléfono: {0}'}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

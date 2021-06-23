@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippersApp.Views.RegistroShippersPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nuevo transportista"
+                   FontAttributes="Bold"
+                   FontSize="20"
+                   Margin="0,20,0,0"
+                   HorizontalTextAlignment="Center"/>
+            <StackLayout Margin="20,20,20,0">
+                <Entry Placeholder="Nombre" x:Name="txtNombre"/>
+                <Entry Placeholder="Teléfono" x:Name="txtPhone"
+                       Keyboard="Telephone"/>
+                <Button Text="Agregar transportista"
+                        HorizontalOptions="Center"
+                        Padding="20,0"
+                        FontSize="18"
+                        Margin="0,20"
+                        CornerRadius="20"
+                        BackgroundColor="LightSteelBlue"
+                        x:Name="btnAddShipper"
+                        Clicked="btnAddShipper_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
