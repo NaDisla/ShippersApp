@@ -8,16 +8,23 @@
                    HorizontalTextAlignment="Center"
                    FontAttributes="Bold"
                    FontSize="20"
-                   Margin="0,30,0,0"/>
-            <Button Text="Agregar transportista"
+                   Margin="0,30,0,0"/> 
+            <Button Text="Agregar"
                     x:Name="btnAddShipperPage"
                     Clicked="btnAddShipperPage_Clicked"
                     BackgroundColor="LightSkyBlue"
                     HorizontalOptions="Center"
                     CornerRadius="10"/>
+            <Button Text="Eliminar"
+                    x:Name="btnDeleteShipper"
+                    Clicked="btnDeleteShipper_Clicked"
+                    BackgroundColor="Red"
+                    HorizontalOptions="Center"
+                    CornerRadius="10"/>
             <ListView x:Name="ShippersList"
                     SeparatorColor="DarkBlue"
-                    RowHeight="60">
+                    RowHeight="60"
+                    ItemSelected="ShippersList_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

@@ -22,9 +22,10 @@ namespace ShippersApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            GetShippers();
+            GetAsync();
         }
-        async void GetShippers()
+        
+        async void GetAsync()
         {
             json = await client.GetStringAsync(urlApi);
             List<Shippers> getShippers = JsonConvert.DeserializeObject<List<Shippers>>(json);
@@ -35,6 +36,17 @@ namespace ShippersApp.Views
         private async void btnAddShipperPage_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegistroShippersPage());
+        }
+
+        private async void ShippersList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var shipper = e.SelectedItem as Shippers;
+            await Navigation.PushAsync(new UpdateShippersPage(shipper.ShipperID, shipper.CompanyName, shipper.Phone));
+        }
+
+        private async void btnDeleteShipper_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new DeleteShipperPage());
         }
     }
 }

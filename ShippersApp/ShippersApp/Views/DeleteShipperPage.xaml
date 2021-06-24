@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShippersApp.Views.DeleteShipperPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Eliminar transportista"/>
+            <Entry Placeholder="ID Transportista"
+                   x:Name="txtShipperID"/>
+            <Button Text="Eliminar"
+                    x:Name="btnDeleteShipper"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="btnDeleteShipper_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
